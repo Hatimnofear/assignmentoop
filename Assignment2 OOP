@@ -1,0 +1,58 @@
+//Task1
+//1. import mother and father attribute
+//2. add two new attributes in the child constructor
+
+class Father():
+    def __init__(self):
+        self.Fatername = None
+        self.fname = None
+        self.color = 'Gray'
+        self.hair_color = 'Graish'
+        self.height = '5.7 feet'
+    def father(self):
+        return "Hahahah!"
+class Mother():
+    def __init__(self):
+        self.Mothername = None
+        self.fname = None
+        self.color = 'normal'
+        self.haircolor = 'black'
+        self.height = '5.3 feet'    
+    def mother(self):
+        return "oops!"
+
+class Child(Mother,Father):
+     def __init__(self):
+        Mother.__init__(self)
+        Father.__init__(self)
+        self.education = None 
+        self.language = None
+        
+        
+c1 = Child()
+print([i for i in dir(c1) if "__" not in i])
+
+['Fatername', 'Mothername', 'color', 'education', 'father', 'fname', 'hair_color', 'haircolor', 'height', 'language', 'mother']
+
+
+//Task2:
+//Create operator overloading
+
+class Total ():
+    def __init__(self,Num1 , Num2):
+        self.Item1 = Num1
+        self.Item2 = Num2
+    def __add__(self,other):
+        Item1 = self.Item1 + other.Item1 
+        Item2 = self.Item2 + other.Item2
+        Total = Total(Item1 , Item2)
+        return Total
+    def __str__(self):
+        return f"Total ItemsA {self.Item1}  Total ItemsB {self.Item2}"
+    
+a = TotalNumber(4,3)
+b = TotalNumber(6,4)
+c = a + b
+print(c) 
+
+        Total ItemsA Amount is 10  Total ItemsB Amount is 7
